@@ -6,113 +6,215 @@
     <title>JOG ELECTROBUILD Corp. | Electrical & Automation Specialists</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        :root {
+            --md-sys-color-primary: #0056D2;
+            --md-sys-color-on-primary: #FFFFFF;
+            --md-sys-color-primary-container: #D8E2FF;
+            --md-sys-color-on-primary-container: #001A41;
+            --md-sys-color-secondary: #545F71;
+            --md-sys-color-on-secondary: #FFFFFF;
+            --md-sys-color-secondary-container: #D8E3F8;
+            --md-sys-color-on-secondary-container: #111C2B;
+            --md-sys-color-surface: #FDFBFF;
+            --md-sys-color-on-surface: #1B1B1F;
+            --md-sys-color-surface-variant: #E1E2EC;
+            --md-sys-color-on-surface-variant: #44474F;
+            --md-sys-color-outline: #74777F;
+        }
+
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            scroll-behavior: smooth;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+        }
+
+        .md-card {
+            background-color: var(--md-sys-color-surface);
+            border-radius: 12px;
+            padding: 16px;
+            transition: box-shadow 0.2s;
+            border: 1px solid var(--md-sys-color-outline);
+        }
+        
+        .md-card-elevated {
+            background-color: var(--md-sys-color-surface);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
+        
+        .md-card-elevated:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        .md-button-filled {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            border-radius: 20px;
+            padding: 10px 24px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .md-button-filled:hover {
+            background-color: #0046AB;
+        }
+
+        .md-button-outlined {
+            border: 1px solid var(--md-sys-color-outline);
+            color: var(--md-sys-color-primary);
+            border-radius: 20px;
+            padding: 10px 24px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .md-button-outlined:hover {
+            background-color: rgba(0, 86, 210, 0.08);
+        }
+
+        .hero-section {
+            background-color: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="selection:bg-blue-200">
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
         <nav class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
-            <div class="text-2xl font-bold text-blue-900 tracking-tight">JOG ELECTROBUILD <span class="text-blue-600">Corp.</span></div>
-            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Contact Us</a>
+            <div class="text-2xl font-bold text-[#001A41] tracking-tight flex items-center">
+                <span class="w-8 h-8 bg-[#0056D2] rounded-lg mr-2 inline-block"></span>
+                JOG ELECTROBUILD <span class="text-[#0056D2] ml-1">Corp.</span>
+            </div>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="text-slate-600 hover:text-[#0056D2] font-medium transition px-3 py-2 rounded-lg hover:bg-slate-100">About</a>
+                <a href="#services" class="text-slate-600 hover:text-[#0056D2] font-medium transition px-3 py-2 rounded-lg hover:bg-slate-100">Services</a>
+                <a href="#projects" class="text-slate-600 hover:text-[#0056D2] font-medium transition px-3 py-2 rounded-lg hover:bg-slate-100">Projects</a>
+                <a href="#contact" class="md-button-filled text-sm">Contact Us</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-gradient text-white py-24 px-6">
-        <div class="container mx-auto text-center max-w-4xl">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Design & Construct Specialists</h1>
-            <p class="text-xl md:text-2xl mb-10 text-blue-100">Electrical, Instrumentation, Controls, and Plant Automation Solutions for Industrial Excellence.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#services" class="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition">Our Offerings</a>
-                <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition">Get in Touch</a>
+    <section class="hero-section py-24 px-6 overflow-hidden">
+        <div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 text-left">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">Industrial <br><span class="text-[#0056D2]">Automation</span> Excellence</h1>
+                <p class="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">Design and construction for electrical, instrumentation, controls, and plant automation.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="md-button-filled shadow-lg">Explore Offerings</a>
+                    <a href="#contact" class="md-button-outlined">Get in Touch</a>
+                </div>
+            </div>
+            <div class="flex-1 relative">
+                <div class="w-full h-80 bg-white rounded-3xl shadow-2xl rotate-3 flex items-center justify-center p-8">
+                    <div class="w-full h-full border-4 border-dashed border-blue-100 rounded-2xl flex items-center justify-center">
+                        <svg class="w-24 h-24 text-blue-200" fill="currentColor" viewBox="0 0 24 24"><path d="M13,14H11V10H13M13,18H11V16H13M1,21H23L12,2L1,21Z"/></svg>
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-600 rounded-full opacity-10 blur-3xl"></div>
             </div>
         </div>
     </section>
 
     <!-- Specialization & About -->
-    <section id="about" class="py-20 px-6">
-        <div class="container mx-auto max-w-5xl">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+    <section id="about" class="py-24 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
                 <div>
-                    <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">Our Specialization</h2>
-                    <h3 class="text-3xl font-bold mb-6 text-slate-800">Complete Industrial Automation & Electrical Infrastructure</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6 text-lg">
-                        JOG ELECTROBUILD Corp. specializes in the design and construction for electrical, instrumentation, controls, and plant automation. We bridge the gap between complex engineering requirements and operational reality.
+                    <span class="inline-block px-4 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-bold mb-4">Specialization</span>
+                    <h2 class="text-4xl font-bold mb-8 text-[#1B1B1F]">Engineering the Future of Plant Operations</h2>
+                    <p class="text-slate-600 leading-relaxed mb-8 text-lg">
+                        JOG ELECTROBUILD Corp. bridges the gap between complex engineering requirements and operational reality. We specialize in end-to-end electrical and control systems.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded-lg mr-4 mt-1">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="md-card flex items-start p-4">
+                            <div class="text-blue-600 mr-3 mt-1">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
-                            <p class="font-medium text-slate-700">Strategic Distributor for Sumitomo Electric Group & Tonn Cable</p>
+                            <span class="font-medium text-slate-700 text-sm">Sumitomo Electric Distributor</span>
                         </div>
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded-lg mr-4 mt-1">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <div class="md-card flex items-start p-4">
+                            <div class="text-blue-600 mr-3 mt-1">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             </div>
-                            <p class="font-medium text-slate-700">Hazardous Location Equipment Specialist (Oil & Gas)</p>
+                            <span class="font-medium text-slate-700 text-sm">Hazardous Location Specialist</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-blue-900 rounded-3xl p-8 text-white shadow-2xl">
-                    <h4 class="text-xl font-bold mb-4 border-b border-blue-800 pb-2 uppercase text-blue-300 tracking-wider">Primary Stock</h4>
-                    <ul class="space-y-6">
-                        <li>
-                            <span class="block text-blue-400 text-sm font-bold uppercase">Cables</span>
-                            <span class="text-lg">Direct Burial Cable (Cu/XLPE/SWAPVC) - Sumitomo Cables</span>
-                        </li>
-                        <li>
-                            <span class="block text-blue-400 text-sm font-bold uppercase">Infrastructure</span>
-                            <span class="text-lg">Withdrawable Motor Control Center (MCC)</span>
-                        </li>
-                    </ul>
+                <div class="bg-[#FDFBFF] rounded-[32px] p-10 border border-[#74777F] border-opacity-20 shadow-sm">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center">
+                        <span class="w-2 h-8 bg-blue-600 rounded-full mr-3"></span>
+                        Primary Inventory
+                    </h3>
+                    <div class="space-y-8">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Cables</p>
+                            <p class="text-xl font-medium">Direct Burial Cable (Cu/XLPE/SWAPVC)</p>
+                            <p class="text-blue-600 font-semibold">Sumitomo Cables</p>
+                        </div>
+                        <div class="w-full h-px bg-slate-100"></div>
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Power Control</p>
+                            <p class="text-xl font-medium">Withdrawable Motor Control Center (MCC)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Key Offerings -->
-    <section id="services" class="bg-slate-100 py-20 px-6">
+    <section id="services" class="bg-slate-50 py-24 px-6 rounded-[48px] mx-4">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">Key Offerings</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                <h2 class="text-4xl font-bold text-[#1B1B1F]">Comprehensive Solutions</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Integrated systems designed for reliability and performance in demanding environments.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-200">
-                    <div class="text-blue-600 mb-4 font-bold text-lg">System Automation</div>
-                    <ul class="text-slate-600 space-y-3">
-                        <li>• SCADA systems development</li>
-                        <li>• Siemens-based control panels</li>
-                        <li>• Plant-wide automation design</li>
+                <div class="md-card-elevated">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-[#1B1B1F]">System Automation</h4>
+                    <ul class="text-slate-600 space-y-4">
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>SCADA development</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Siemens control panels</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Plant-wide automation</li>
                     </ul>
                 </div>
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-200">
-                    <div class="text-blue-600 mb-4 font-bold text-lg">Electrical Equipment</div>
-                    <ul class="text-slate-600 space-y-3">
-                        <li>• Motor Control Centers (MCC)</li>
-                        <li>• Schneider Softstarter integration</li>
-                        <li>• Custom panel fabrication</li>
+                <div class="md-card-elevated">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-[#1B1B1F]">Electrical Equipment</h4>
+                    <ul class="text-slate-600 space-y-4">
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Motor Control Centers (MCC)</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Schneider Softstarters</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Custom panel fabrication</li>
                     </ul>
                 </div>
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-slate-200">
-                    <div class="text-blue-600 mb-4 font-bold text-lg">Instrumentation</div>
-                    <ul class="text-slate-600 space-y-3">
-                        <li>• LPG Mass Flowmeters</li>
-                        <li>• Tank Gauging Systems</li>
-                        <li>• Gas & Flame Detectors</li>
+                <div class="md-card-elevated">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-[#1B1B1F]">Instrumentation</h4>
+                    <ul class="text-slate-600 space-y-4">
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>LPG Mass Flowmeters</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Tank Gauging Systems</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Gas & Flame Detectors</li>
                     </ul>
                 </div>
             </div>
@@ -120,97 +222,98 @@
     </section>
 
     <!-- Notable Projects -->
-    <section id="projects" class="py-20 px-6">
+    <section id="projects" class="py-24 px-6">
         <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl font-bold mb-12 text-slate-800 text-center">Notable Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Project Cards -->
-                <div class="border border-slate-200 p-6 rounded-xl hover:bg-slate-50 transition">
-                    <span class="text-blue-600 font-bold text-sm">Dec 2019</span>
-                    <h4 class="font-bold mt-2">2 X 1500MT Mounded LPG Storage Tanks</h4>
-                    <p class="text-sm text-slate-500 mt-2 italic">Petron Corp (via Mechatrends)</p>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <h2 class="text-4xl font-bold text-[#1B1B1F]">Notable Projects</h2>
+                <a href="#contact" class="md-button-outlined">Partner with us</a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="md-card hover:bg-slate-50 border-none bg-white shadow-sm p-6">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-tighter">Dec 2019</span>
+                    <h4 class="font-bold mt-3 leading-tight">2 X 1500MT Mounded LPG Tanks</h4>
+                    <p class="text-xs text-slate-400 mt-2">Petron Corp, Misamis Oriental</p>
                 </div>
-                <div class="border border-slate-200 p-6 rounded-xl hover:bg-slate-50 transition">
-                    <span class="text-blue-600 font-bold text-sm">Nov 2019</span>
-                    <h4 class="font-bold mt-2">3 X 100MT LPG Storage Tank</h4>
-                    <p class="text-sm text-slate-500 mt-2 italic">SPI LPG Refilling Plant</p>
+                <div class="md-card hover:bg-slate-50 border-none bg-white shadow-sm p-6">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-tighter">Nov 2019</span>
+                    <h4 class="font-bold mt-3 leading-tight">3 X 100MT LPG Storage Tank</h4>
+                    <p class="text-xs text-slate-400 mt-2">SPI LPG Plant, Pampanga</p>
                 </div>
-                <div class="border border-slate-200 p-6 rounded-xl hover:bg-slate-50 transition">
-                    <span class="text-blue-600 font-bold text-sm">Sept 2018</span>
-                    <h4 class="font-bold mt-2">LPG Terminal Expansion</h4>
-                    <p class="text-sm text-slate-500 mt-2 italic">Petron Corp (via Mechatrends)</p>
+                <div class="md-card hover:bg-slate-50 border-none bg-white shadow-sm p-6">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-tighter">Sept 2018</span>
+                    <h4 class="font-bold mt-3 leading-tight">LPG Terminal Expansion</h4>
+                    <p class="text-xs text-slate-400 mt-2">Petron Corp, Pampanga</p>
                 </div>
-                <div class="border border-slate-200 p-6 rounded-xl hover:bg-slate-50 transition">
-                    <span class="text-blue-600 font-bold text-sm">March 2018</span>
-                    <h4 class="font-bold mt-2">New Tank Truck Loading Rack</h4>
-                    <p class="text-sm text-slate-500 mt-2 italic">Petron Corp (via Mechatrends)</p>
-                </div>
-                <div class="border border-slate-200 p-6 rounded-xl hover:bg-slate-50 transition">
-                    <span class="text-blue-600 font-bold text-sm">Jan 2017</span>
-                    <h4 class="font-bold mt-2">2 X 70KL Storage Tank Construction</h4>
-                    <p class="text-sm text-slate-500 mt-2 italic">Sun Power Philippines</p>
-                </div>
-                <div class="border border-slate-200 p-6 rounded-xl hover:bg-slate-50 transition">
-                    <span class="text-blue-600 font-bold text-sm">Oct 2016</span>
-                    <h4 class="font-bold mt-2">11 X 2000MT LPG Storage Tank</h4>
-                    <p class="text-sm text-slate-500 mt-2 italic">SPI LPG Calaca Terminal</p>
+                <div class="md-card hover:bg-slate-50 border-none bg-white shadow-sm p-6">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-tighter">Oct 2016</span>
+                    <h4 class="font-bold mt-3 leading-tight">11 X 2000MT LPG Storage Tank</h4>
+                    <p class="text-xs text-slate-400 mt-2">SPI LPG Calaca Terminal</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-blue-900 text-white py-20 px-6">
-        <div class="container mx-auto max-w-5xl">
-            <div class="grid md:grid-cols-2 gap-12">
+    <section id="contact" class="bg-[#1B1B1F] text-white py-24 px-6 rounded-t-[64px]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-20">
                 <div>
-                    <h2 class="text-3xl font-bold mb-8">Contact Information</h2>
-                    <ul class="space-y-6 text-blue-100">
-                        <li class="flex items-center">
-                            <span class="bg-blue-800 p-3 rounded-full mr-4">📧</span>
-                            <a href="mailto:jogeralde@jogelectrobuild.com" class="hover:underline">jogeralde@jogelectrobuild.com</a>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-800 p-3 rounded-full mr-4">📍</span>
-                            <span>Lot 14, Block 12, Pacita Avenue corner 15th Street,<br>San Pedro, Laguna, Philippines, 4023</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="bg-blue-800 p-3 rounded-full mr-4">📞</span>
-                            <span>+632 – 7750 311 | +63917 705 3346</span>
-                        </li>
-                    </ul>
+                    <h2 class="text-5xl font-bold mb-10">Let's build <br>something <span class="text-blue-500">together</span>.</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6">📧</div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase">Email us</p>
+                                <a href="mailto:jogeralde@jogelectrobuild.com" class="text-lg hover:text-blue-400">jogeralde@jogelectrobuild.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6">📍</div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase">Our Office</p>
+                                <p class="text-lg opacity-90">Lot 14, Block 12, Pacita Avenue, <br>San Pedro, Laguna, PH 4023</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6">📞</div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase">Call us</p>
+                                <p class="text-lg opacity-90">+632 – 7750 311 | +63917 705 3346</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white/10 p-8 rounded-2xl backdrop-blur-sm">
-                    <h3 class="text-xl font-bold mb-6">Corporate Credentials</h3>
-                    <div class="grid grid-cols-2 gap-4 text-sm text-blue-200">
+                <div class="bg-white/5 p-12 rounded-[40px] border border-white/10 backdrop-blur-xl">
+                    <h3 class="text-xl font-bold mb-8 opacity-60">Credentials</h3>
+                    <div class="grid grid-cols-2 gap-y-10 gap-x-6">
                         <div>
-                            <p class="text-blue-400 font-bold uppercase text-[10px]">PCAB License</p>
-                            <p class="text-white">43940</p>
+                            <p class="text-[10px] font-bold uppercase text-blue-500 mb-1">PCAB License</p>
+                            <p class="text-sm font-medium">43940</p>
                         </div>
                         <div>
-                            <p class="text-blue-400 font-bold uppercase text-[10px]">VAT Reg. TIN</p>
-                            <p class="text-white">210-520-159-000</p>
+                            <p class="text-[10px] font-bold uppercase text-blue-500 mb-1">VAT Reg. TIN</p>
+                            <p class="text-sm font-medium">210-520-159-000</p>
                         </div>
                         <div>
-                            <p class="text-blue-400 font-bold uppercase text-[10px]">DTI Certificate</p>
-                            <p class="text-white">01674460</p>
+                            <p class="text-[10px] font-bold uppercase text-blue-500 mb-1">DTI Certificate</p>
+                            <p class="text-sm font-medium">01674460</p>
                         </div>
                         <div>
-                            <p class="text-blue-400 font-bold uppercase text-[10px]">Importer's License</p>
-                            <p class="text-white">IM0007429495</p>
+                            <p class="text-[10px] font-bold uppercase text-blue-500 mb-1">Importer's</p>
+                            <p class="text-sm font-medium">IM0007429495</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="mt-24 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
+                <p>&copy; 2026 JOG ELECTROBUILD Corp. All rights reserved.</p>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-500 py-10 px-6 border-t border-slate-800 text-center">
-        <div class="container mx-auto">
-            <p>&copy; 2026 JOG ELECTROBUILD Corp. All rights reserved.</p>
-        </div>
-    </footer>
 
 </body>
 </html>
