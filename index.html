@@ -87,88 +87,109 @@
             background-color: var(--md-sys-color-primary-container);
             color: var(--md-sys-color-on-primary-container);
         }
+
+        /* Mobile Menu Toggle */
+        #mobile-menu-toggle:checked ~ #mobile-menu {
+            display: flex;
+        }
     </style>
 </head>
 <body class="selection:bg-blue-200">
 
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
-        <nav class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
-            <div class="text-2xl font-bold text-[#001A41] tracking-tight flex items-center">
-                <span class="w-8 h-8 bg-[#0056D2] rounded-lg mr-2 inline-block"></span>
-                JOG ELECTROBUILD <span class="text-[#0056D2] ml-1">Corp.</span>
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+            <div class="text-xl md:text-2xl font-bold text-[#001A41] tracking-tight flex items-center">
+                <span class="w-6 h-6 md:w-8 md:h-8 bg-[#0056D2] rounded-lg mr-2 inline-block"></span>
+                <span class="truncate">JOG ELECTROBUILD <span class="text-[#0056D2]">Corp.</span></span>
             </div>
-            <div class="hidden md:flex space-x-6 items-center">
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-6 items-center">
                 <a href="#about" class="text-slate-600 hover:text-[#0056D2] font-medium transition px-3 py-2 rounded-lg hover:bg-slate-100">About</a>
                 <a href="#services" class="text-slate-600 hover:text-[#0056D2] font-medium transition px-3 py-2 rounded-lg hover:bg-slate-100">Services</a>
                 <a href="#projects" class="text-slate-600 hover:text-[#0056D2] font-medium transition px-3 py-2 rounded-lg hover:bg-slate-100">Projects</a>
                 <a href="#contact" class="md-button-filled text-sm">Contact Us</a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
+            <label for="mobile-menu-toggle" class="lg:hidden p-2 text-slate-600 cursor-pointer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </label>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 flex-col p-6 space-y-4 shadow-xl lg:hidden peer-checked:flex">
+                <a href="#about" class="text-slate-600 font-medium py-2 border-b border-slate-50">About</a>
+                <a href="#services" class="text-slate-600 font-medium py-2 border-b border-slate-50">Services</a>
+                <a href="#projects" class="text-slate-600 font-medium py-2 border-b border-slate-50">Projects</a>
+                <a href="#contact" class="md-button-filled w-full">Contact Us</a>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section py-24 px-6 overflow-hidden">
-        <div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-12">
-            <div class="flex-1 text-left">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">Industrial <br><span class="text-[#0056D2]">Automation</span> Excellence</h1>
-                <p class="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">Design and construction for electrical, instrumentation, controls, and plant automation.</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#services" class="md-button-filled shadow-lg">Explore Offerings</a>
-                    <a href="#contact" class="md-button-outlined">Get in Touch</a>
+    <section class="hero-section py-12 md:py-24 px-6 overflow-hidden">
+        <div class="container mx-auto max-w-5xl flex flex-col lg:flex-row items-center gap-12">
+            <div class="flex-1 text-center lg:text-left">
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight">Industrial <br><span class="text-[#0056D2]">Automation</span> Excellence</h1>
+                <p class="text-lg md:text-xl lg:text-2xl mb-10 opacity-90 leading-relaxed">Design and construction for electrical, instrumentation, controls, and plant automation.</p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="#services" class="md-button-filled shadow-lg w-full sm:w-auto">Explore Offerings</a>
+                    <a href="#contact" class="md-button-outlined w-full sm:w-auto">Get in Touch</a>
                 </div>
             </div>
-            <div class="flex-1 relative">
-                <div class="w-full h-80 bg-white rounded-3xl shadow-2xl rotate-3 flex items-center justify-center p-8">
+            <div class="flex-1 relative w-full lg:w-auto">
+                <div class="w-full h-64 md:h-80 bg-white rounded-3xl shadow-2xl rotate-3 flex items-center justify-center p-8">
                     <div class="w-full h-full border-4 border-dashed border-blue-100 rounded-2xl flex items-center justify-center">
-                        <svg class="w-24 h-24 text-blue-200" fill="currentColor" viewBox="0 0 24 24"><path d="M13,14H11V10H13M13,18H11V16H13M1,21H23L12,2L1,21Z"/></svg>
+                        <svg class="w-16 md:w-24 h-16 md:h-24 text-blue-200" fill="currentColor" viewBox="0 0 24 24"><path d="M13,14H11V10H13M13,18H11V16H13M1,21H23L12,2L1,21Z"/></svg>
                     </div>
                 </div>
-                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-600 rounded-full opacity-10 blur-3xl"></div>
+                <div class="absolute -bottom-6 -left-6 w-24 md:w-32 h-24 md:h-32 bg-blue-600 rounded-full opacity-10 blur-3xl"></div>
             </div>
         </div>
     </section>
 
     <!-- Specialization & About -->
-    <section id="about" class="py-24 px-6">
+    <section id="about" class="py-16 md:py-24 px-6">
         <div class="container mx-auto max-w-6xl">
-            <div class="grid md:grid-cols-2 gap-16 items-start">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                 <div>
                     <span class="inline-block px-4 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-bold mb-4">Specialization</span>
-                    <h2 class="text-4xl font-bold mb-8 text-[#1B1B1F]">Engineering the Future of Plant Operations</h2>
-                    <p class="text-slate-600 leading-relaxed mb-8 text-lg">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-[#1B1B1F]">Engineering the Future of Plant Operations</h2>
+                    <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
                         JOG ELECTROBUILD Corp. bridges the gap between complex engineering requirements and operational reality. We specialize in end-to-end electrical and control systems.
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="md-card flex items-start p-4">
-                            <div class="text-blue-600 mr-3 mt-1">
+                            <div class="text-blue-600 mr-3 mt-1 shrink-0">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
                             <span class="font-medium text-slate-700 text-sm">Sumitomo Electric Distributor</span>
                         </div>
                         <div class="md-card flex items-start p-4">
-                            <div class="text-blue-600 mr-3 mt-1">
+                            <div class="text-blue-600 mr-3 mt-1 shrink-0">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             </div>
                             <span class="font-medium text-slate-700 text-sm">Hazardous Location Specialist</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-[#FDFBFF] rounded-[32px] p-10 border border-[#74777F] border-opacity-20 shadow-sm">
-                    <h3 class="text-2xl font-bold mb-8 flex items-center">
-                        <span class="w-2 h-8 bg-blue-600 rounded-full mr-3"></span>
+                <div class="bg-[#FDFBFF] rounded-[24px] md:rounded-[32px] p-6 md:p-10 border border-[#74777F] border-opacity-20 shadow-sm">
+                    <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 flex items-center">
+                        <span class="w-1.5 md:w-2 h-6 md:h-8 bg-blue-600 rounded-full mr-3"></span>
                         Primary Inventory
                     </h3>
-                    <div class="space-y-8">
+                    <div class="space-y-6 md:space-y-8">
                         <div>
-                            <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Cables</p>
-                            <p class="text-xl font-medium">Direct Burial Cable (Cu/XLPE/SWAPVC)</p>
+                            <p class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Cables</p>
+                            <p class="text-lg md:text-xl font-medium">Direct Burial Cable (Cu/XLPE/SWAPVC)</p>
                             <p class="text-blue-600 font-semibold">Sumitomo Cables</p>
                         </div>
                         <div class="w-full h-px bg-slate-100"></div>
                         <div>
-                            <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Power Control</p>
-                            <p class="text-xl font-medium">Withdrawable Motor Control Center (MCC)</p>
+                            <p class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Power Control</p>
+                            <p class="text-lg md:text-xl font-medium">Withdrawable Motor Control Center (MCC)</p>
                         </div>
                     </div>
                 </div>
@@ -177,22 +198,22 @@
     </section>
 
     <!-- Key Offerings -->
-    <section id="services" class="bg-slate-50 py-24 px-6 rounded-[48px] mx-4">
+    <section id="services" class="bg-slate-50 py-16 md:py-24 px-4 md:px-6 rounded-[32px] md:rounded-[48px] mx-2 md:mx-4">
         <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-[#1B1B1F]">Comprehensive Solutions</h2>
-                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Integrated systems designed for reliability and performance in demanding environments.</p>
+            <div class="text-center mb-12 md:text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1B1B1F]">Comprehensive Solutions</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto px-4">Integrated systems designed for reliability and performance in demanding environments.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
                 <div class="md-card-elevated">
                     <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                     </div>
                     <h4 class="text-xl font-bold mb-4 text-[#1B1B1F]">System Automation</h4>
-                    <ul class="text-slate-600 space-y-4">
-                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>SCADA development</li>
-                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Siemens control panels</li>
-                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Plant-wide automation</li>
+                    <ul class="text-slate-600 space-y-3">
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 shrink-0"></span>SCADA development</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 shrink-0"></span>Siemens control panels</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 shrink-0"></span>Plant-wide automation</li>
                     </ul>
                 </div>
                 <div class="md-card-elevated">
@@ -200,10 +221,10 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
                     <h4 class="text-xl font-bold mb-4 text-[#1B1B1F]">Electrical Equipment</h4>
-                    <ul class="text-slate-600 space-y-4">
-                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Motor Control Centers (MCC)</li>
-                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Schneider Softstarters</li>
-                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Custom panel fabrication</li>
+                    <ul class="text-slate-600 space-y-3">
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 shrink-0"></span>Motor Control Centers (MCC)</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 shrink-0"></span>Schneider Softstarters</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 shrink-0"></span>Custom panel fabrication</li>
                     </ul>
                 </div>
                 <div class="md-card-elevated">
@@ -211,10 +232,10 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     </div>
                     <h4 class="text-xl font-bold mb-4 text-[#1B1B1F]">Instrumentation</h4>
-                    <ul class="text-slate-600 space-y-4">
-                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>LPG Mass Flowmeters</li>
-                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Tank Gauging Systems</li>
-                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>Gas & Flame Detectors</li>
+                    <ul class="text-slate-600 space-y-3">
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 shrink-0"></span>LPG Mass Flowmeters</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 shrink-0"></span>Tank Gauging Systems</li>
+                        <li class="flex items-center text-sm"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 shrink-0"></span>Gas & Flame Detectors</li>
                     </ul>
                 </div>
             </div>
@@ -222,13 +243,13 @@
     </section>
 
     <!-- Notable Projects -->
-    <section id="projects" class="py-24 px-6">
+    <section id="projects" class="py-16 md:py-24 px-6">
         <div class="container mx-auto max-w-6xl">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-                <h2 class="text-4xl font-bold text-[#1B1B1F]">Notable Projects</h2>
-                <a href="#contact" class="md-button-outlined">Partner with us</a>
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1B1B1F] text-center md:text-left">Notable Projects</h2>
+                <a href="#contact" class="md-button-outlined w-full md:w-auto">Partner with us</a>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 <div class="md-card hover:bg-slate-50 border-none bg-white shadow-sm p-6">
                     <span class="text-blue-600 font-bold text-xs uppercase tracking-tighter">Dec 2019</span>
                     <h4 class="font-bold mt-3 leading-tight">2 X 1500MT Mounded LPG Tanks</h4>
@@ -254,60 +275,60 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-[#1B1B1F] text-white py-24 px-6 rounded-t-[64px]">
+    <section id="contact" class="bg-[#1B1B1F] text-white py-16 md:py-24 px-6 rounded-t-[40px] md:rounded-t-[64px]">
         <div class="container mx-auto max-w-6xl">
-            <div class="grid md:grid-cols-2 gap-20">
-                <div>
-                    <h2 class="text-5xl font-bold mb-10">Let's build <br>something <span class="text-blue-500">together</span>.</h2>
-                    <div class="space-y-8">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6">📧</div>
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-20">
+                <div class="text-center lg:text-left">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight">Let's build <br class="hidden md:block">something <span class="text-blue-500">together</span>.</h2>
+                    <div class="space-y-8 max-w-md mx-auto lg:mx-0">
+                        <div class="flex items-center text-left">
+                            <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6 shrink-0">📧</div>
                             <div>
-                                <p class="text-xs text-slate-400 font-bold uppercase">Email us</p>
-                                <a href="mailto:jogeralde@jogelectrobuild.com" class="text-lg hover:text-blue-400">jogeralde@jogelectrobuild.com</a>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Email us</p>
+                                <a href="mailto:jogeralde@jogelectrobuild.com" class="text-base md:text-lg hover:text-blue-400 break-all">jogeralde@jogelectrobuild.com</a>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6">📍</div>
+                        <div class="flex items-start text-left">
+                            <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6 shrink-0">📍</div>
                             <div>
-                                <p class="text-xs text-slate-400 font-bold uppercase">Our Office</p>
-                                <p class="text-lg opacity-90">Lot 14, Block 12, Pacita Avenue, <br>San Pedro, Laguna, PH 4023</p>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Our Office</p>
+                                <p class="text-base md:text-lg opacity-90">Lot 14, Block 12, Pacita Avenue, <br>San Pedro, Laguna, PH 4023</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6">📞</div>
+                        <div class="flex items-center text-left">
+                            <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6 shrink-0">📞</div>
                             <div>
-                                <p class="text-xs text-slate-400 font-bold uppercase">Call us</p>
-                                <p class="text-lg opacity-90">+632 – 7750 311 | +63917 705 3346</p>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Call us</p>
+                                <p class="text-base md:text-lg opacity-90">+632 – 7750 311 | +63917 705 3346</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white/5 p-12 rounded-[40px] border border-white/10 backdrop-blur-xl">
-                    <h3 class="text-xl font-bold mb-8 opacity-60">Credentials</h3>
-                    <div class="grid grid-cols-2 gap-y-10 gap-x-6">
+                <div class="bg-white/5 p-8 md:p-12 rounded-[32px] md:rounded-[40px] border border-white/10 backdrop-blur-xl">
+                    <h3 class="text-lg md:text-xl font-bold mb-8 opacity-60">Credentials</h3>
+                    <div class="grid grid-cols-2 gap-y-8 md:gap-y-10 gap-x-6">
                         <div>
-                            <p class="text-[10px] font-bold uppercase text-blue-500 mb-1">PCAB License</p>
-                            <p class="text-sm font-medium">43940</p>
+                            <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">PCAB License</p>
+                            <p class="text-xs md:text-sm font-medium">43940</p>
                         </div>
                         <div>
-                            <p class="text-[10px] font-bold uppercase text-blue-500 mb-1">VAT Reg. TIN</p>
-                            <p class="text-sm font-medium">210-520-159-000</p>
+                            <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">VAT Reg. TIN</p>
+                            <p class="text-xs md:text-sm font-medium">210-520-159-000</p>
                         </div>
                         <div>
-                            <p class="text-[10px] font-bold uppercase text-blue-500 mb-1">DTI Certificate</p>
-                            <p class="text-sm font-medium">01674460</p>
+                            <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">DTI Certificate</p>
+                            <p class="text-xs md:text-sm font-medium">01674460</p>
                         </div>
                         <div>
-                            <p class="text-[10px] font-bold uppercase text-blue-500 mb-1">Importer's</p>
-                            <p class="text-sm font-medium">IM0007429495</p>
+                            <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">Importer's</p>
+                            <p class="text-xs md:text-sm font-medium">IM0007429495</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mt-24 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
+            <div class="mt-16 md:mt-24 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-xs md:text-sm text-center">
                 <p>&copy; 2026 JOG ELECTROBUILD Corp. All rights reserved.</p>
-                <div class="flex space-x-8">
+                <div class="flex space-x-6 md:space-x-8">
                     <a href="#" class="hover:text-white">Privacy Policy</a>
                     <a href="#" class="hover:text-white">Terms of Service</a>
                 </div>
