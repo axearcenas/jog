@@ -421,37 +421,69 @@
                                     <p class="text-base md:text-lg opacity-90 leading-snug">Lot 14, Block 12, Pacita Avenue corner 15th Street,<br>San Pedro, Laguna, PH 4023</p>
                                 </div>
                             </div>
-                            <div class="flex items-center text-left">
-                                <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6 shrink-0">📞</div>
-                                <div>
-                                    <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Call us</p>
-                                    <p class="text-base md:text-lg opacity-90">+632 – 7750 311 | +63917 705 3346</p>
+                            <div class="space-y-4">
+                                <div class="flex items-center text-left">
+                                    <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6 shrink-0">📞</div>
+                                    <div>
+                                        <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Telephone #</p>
+                                        <p class="text-base md:text-lg opacity-90">+632 – 7750 311</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center text-left">
+                                    <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6 shrink-0">📠</div>
+                                    <div>
+                                        <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Fax #</p>
+                                        <p class="text-base md:text-lg opacity-90">+632 – 5533 021</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center text-left">
+                                    <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-6 shrink-0">📱</div>
+                                    <div>
+                                        <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Mobile #</p>
+                                        <p class="text-base md:text-lg opacity-90">+63917 705 3346</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white/5 p-8 md:p-12 rounded-[32px] md:rounded-[40px] border border-white/10 backdrop-blur-xl">
-                        <h3 class="text-lg md:text-xl font-bold mb-8 opacity-60">Technical & Regulatory Information</h3>
-                        <div class="grid grid-cols-2 gap-y-8 md:gap-y-10 gap-x-6">
-                            <div>
-                                <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">PCAB License</p>
-                                <p class="text-xs md:text-sm font-medium">43940</p>
-                            </div>
-                            <div>
-                                <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">VAT Reg. TIN</p>
-                                <p class="text-xs md:text-sm font-medium">210-520-159-000</p>
-                            </div>
-                            <div>
-                                <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">DTI Certificate</p>
-                                <p class="text-xs md:text-sm font-medium">01674460</p>
-                            </div>
-                            <div>
-                                <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">Importer's</p>
-                                <p class="text-xs md:text-sm font-medium">IM0007429495</p>
+                    <div class="flex flex-col gap-8">
+                        <div class="bg-white/5 p-8 md:p-12 rounded-[32px] md:rounded-[40px] border border-white/10 backdrop-blur-xl">
+                            <h3 class="text-lg md:text-xl font-bold mb-8 opacity-60">Technical & Regulatory Information</h3>
+                            <div class="grid grid-cols-2 gap-y-8 md:gap-y-10 gap-x-6">
+                                <div>
+                                    <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">PCAB License</p>
+                                    <p class="text-xs md:text-sm font-medium">43940</p>
+                                </div>
+                                <div>
+                                    <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">VAT Reg. TIN</p>
+                                    <p class="text-xs md:text-sm font-medium">210-520-159-000</p>
+                                </div>
+                                <div>
+                                    <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">DTI Certificate</p>
+                                    <p class="text-xs md:text-sm font-medium">01674460</p>
+                                </div>
+                                <div>
+                                    <p class="text-[9px] md:text-[10px] font-bold uppercase text-blue-500 mb-1">Importer's</p>
+                                    <p class="text-xs md:text-sm font-medium">IM0007429495</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="mt-8 pt-8 border-t border-white/10 text-xs text-slate-400 italic">
-                            Supplier of electrical equipment for hazardous locations. Specialized in Oil & Gas industrial standards.
+                        <!-- Google Map Embed -->
+                        <div class="w-full h-64 md:h-80 rounded-[32px] overflow-hidden border border-white/10 shadow-lg">
+                            <iframe 
+                                width="100%" 
+                                height="100%" 
+                                frameborder="0" 
+                                style="border:0" 
+                                src="https://www.google.com/maps/embed/v1/place?key=REPLACE_WITH_YOUR_API_KEY&q=Lot+14+Block+12+Pacita+Avenue+San+Pedro+Laguna+Philippines" 
+                                allowfullscreen>
+                            </iframe>
+                            <!-- Fallback for demonstration if API key is missing -->
+                            <div class="w-full h-full bg-slate-800 flex items-center justify-center text-slate-500 p-8 text-center text-sm">
+                                [Google Maps View: San Pedro, Laguna Location]
+                                <br>
+                                <span class="text-[10px] opacity-60 mt-2">Note: Integration requires a Google Maps API Key</span>
+                            </div>
                         </div>
                     </div>
                 </div>
