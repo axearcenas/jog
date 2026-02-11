@@ -1,0 +1,34 @@
+Here is a comprehensive breakdown of the content found on the site to assist with your UI redesign:
+
+1. Core Business & Services
+Company Name: JOG ELECTROBUILD
+Tagline: Design & Construct: Electrical ◆ Instrumentation ◆ Controls.
+Key Services:
+Design and construction for electrical, instrumentation, controls, and plant automation.
+Supplying electrical equipment for hazardous locations (Oil & Gas).
+Instrumentation supply: LPG Mass Flowmeters, Tank Gauging Systems, Gas & Flame Detectors.
+Design and fabrication of Motor Control Centers (MCC) with soft starters (Schneider Electric).
+Design and fabrication of control panels for system automation (Siemens).
+SCADA system design and development for plant automation.
+2. Products in Stock
+Cables: Local distributor of Direct Burial Cable (DBC), TONN CABLE, and PT. SUMI INDO KABEL TBK (Sumitomo Electric Group).
+MCC: Withdrawable Motor Control Centers (MCC).
+3. Portfolio / Finished Projects
+The site highlights several industrial projects with completion dates and partners:
+
+2 x 1500MT Mounded LPG Storage Tanks (Dec 2019): For Petron Corporation via Mechatrends Contractors Corp in Misamis Oriental.
+3 x 100MT LPG Storage Tank (Nov 2019): South Pacific Inc. (SPI) LPG Refilling Plant in Pampanga.
+New Tank Truck Loading Rack (Mar 2018): Petron Corporation in Rosario, Cavite.
+LPG Terminal Expansion (Sept 2018): Petron Corporation in Pampanga.
+Storage & Distribution: Construction of two 70KL Storage Tanks and Piping Distribution Systems.
+4. Brand Partners & Clients
+Partners/Brands: Schneider Electric, Siemens, Sumitomo Electric, Tonn Cable.
+Major Clients/End-Users: Petron Corporation, South Pacific Inc. (SPI), Mechatrends Contractors Corp.
+5. Navigation & Layout Elements
+Primary Sections: What We Offer, Products on Stock, Finished Projects, Additional Information.
+Utility Links: Skip to main content, Skip to navigation.
+Redesign Recommendations:
+Visual Hierarchy: Since the business is industrial and high-stakes (Oil & Gas), the UI should look robust, professional, and reliable. Use high-quality imagery of the finished control panels and tank farms.
+Project Showcase: The "Finished Projects" section currently seems text-heavy. Consider a card-based layout with "Year," "Client," and "Location" badges.
+Technical Specs: Ensure there is a dedicated space for technical data sheets or brand logos to build credibility with engineers.
+Mobile Responsiveness: Industrial clients often access site info from the field; ensure the navigation to "Products on Stock" is very easy on mobile.
